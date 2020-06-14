@@ -339,7 +339,7 @@ def rle_encoding(x):
         prev = b
     return run_lengths
 
-def prob_to_rles(x, cutoff=0.6):
+def prob_to_rles(x, cutoff=0.5):
     lab_img = label(x > cutoff)
     for i in range(1, lab_img.max() + 1):
         yield rle_encoding(lab_img == i)
